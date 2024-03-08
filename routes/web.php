@@ -54,6 +54,8 @@ Route::get('/login',function(){
     return redirect('/');
 });
 
+// ********** Athu verfication *********
+
 Route::get('/',[AuthController::class,'loadLogin']);
 Route::post('/login',[AuthController::class,'login'])->name('login');
 Route::get('/logout',[AuthController::class,'logout'])->name('logout');
