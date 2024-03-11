@@ -85,12 +85,28 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+            <li class="nav-item">
+                <a href="{{ route('manageRole') }}" class="nav-link">
+                <i class="nav-icon fa fa-user text-info"></i>
+                <p>Manage Role</p>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="{{ route('managePlayers') }}" class="nav-link">
+                <i class="nav-icon fa fa-user text-info"></i>
+                <p>Player Account</p>
+                </a>
+            </li>
+
+
+
             @if(auth()->user()->role == 1)
             <li class="nav-item">
                 <a href="#" class="nav-link">
                 <i class="nav-icon fa fa-users"></i>
                 <p>
-                    Users
+                    Users Role
                     <i class="fas fa-angle-left right"></i>
                 </p>
                 </a>
@@ -98,18 +114,13 @@
                 <li class="nav-item">
                     <a href="{{ route('AdminUsers') }}" class="nav-link">
                     <i class="fa fa-users nav-icon"></i>
-                    <p>User</p>
+                    <p>Users</p>
                     </a>
                 </li>
 
                 </ul>
             </li>
-            <li class="nav-item">
-                <a href="{{ route('manageRole') }}" class="nav-link">
-                <i class="nav-icon fa fa-user text-info"></i>
-                <p>Manage Role</p>
-                </a>
-            </li>
+
           @endif
           <!-- <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">

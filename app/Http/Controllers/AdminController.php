@@ -16,13 +16,13 @@ class AdminController extends Controller
 
     public function users()
      {
-         $users = User::with('roles')->where('role','!=',2)->get();
+         $users = User::with('roles')->where('role','!=',1)->get();
          return view('admin.users', compact('users'));
      }
 
      public function manageRole()
      {
-         $users = User::where('role','!=',2)->get();
+         $users = User::where('role','!=',1)->get();
          $roles = Role::all();
          return view('admin.manage-role', compact(['users','roles']));
      }

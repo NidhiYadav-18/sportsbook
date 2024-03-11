@@ -67,6 +67,9 @@ Route::group(['prefix' => 'admin','middleware'=>['web','isAdmin']],function(){
     Route::get('/users',[AdminController::class,'users'])->name('AdminUsers');
     Route::get('/manage-role',[AdminController::class,'manageRole'])->name('manageRole');
     Route::post('/update-role',[AdminController::class,'updateRole'])->name('updateRole');
+
+    Route::get('/manage-players',[AdminController::class,'managePlayers'])->name('managePlayers');
+    Route::get('/add-players',[AdminController::class,'addPlayers'])->name('addPlayers');
 });
 
 // ********** Super Agent Routes *********
@@ -87,4 +90,9 @@ Route::group(['prefix' => 'agent','middleware'=>['web','isAgent']],function(){
 // ********** User Routes *********
 Route::group(['middleware'=>['web','isUser']],function(){
     Route::get('/dashboard',[UserController::class,'dashboard']);
+
 });
+
+
+
+
